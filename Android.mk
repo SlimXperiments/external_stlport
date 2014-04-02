@@ -60,12 +60,24 @@ LOCAL_CPPFLAGS := $(libstlport_cppflags)
 LOCAL_C_INCLUDES := $(libstlport_c_includes)
 include $(BUILD_SHARED_LIBRARY)
 
-##########################################
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(libstlport_src_files)
 
 LOCAL_MODULE := libstlport
+LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
+
+LOCAL_CFLAGS := $(libstlport_cflags)
+LOCAL_CPPFLAGS := $(libstlport_cppflags)
+LOCAL_C_INCLUDES := $(libstlport_c_includes)
+include $(BUILD_STATIC_LIBRARY)
+
+##########################################
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := $(libstlport_src_files)
+
+LOCAL_MODULE := libstlport_static
 LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
 
 LOCAL_CFLAGS := $(libstlport_cflags)
